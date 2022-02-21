@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#47c8d0</color>
+    <color name="colorPrimaryDark">#2D8C7F</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="red">#FF0000</color>
+    <color name="black">#000000</color>
+    <color name="gray">#888888</color>
+    <color name="lightBlue">#c8e1e3</color>
+    <color name="darkBlue">#78a8ac</color>
+    <color name="toggleSelected">#e7efef</color>
+
+    <color name="signInPurple">#b5b8ce</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="sober_marker">#f4d836</color>
+    <color name="residential_marker">#449e99</color>
+    <color name="resource_marker">#FF2a4269</color>
+    <color name="homeless_marker">#845fa1</color>
+    <color name="adolescents_marker">#f39a29</color>
+    <color name="none_marker">#f4db0a</color>
+    <color name="out_marker">#FFea3590</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="yellow_msg_bubble">#e7ab2b</color>
+    <color name="teal_msg_bubble">#2d8c81</color>
+    <color name="status_online">#00C67A</color>
+    <color name="status_offline">#C60000</color>
+    <color name="status_busy">#E7AB2B</color>
+</resources>

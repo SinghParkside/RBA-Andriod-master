@@ -1,0 +1,25 @@
+<resources>
+
+    <style name="ThemeOverlay.WisHope.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
+        <item name="fullscreenTextColor">@color/light_blue_A200</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.StatusSwitch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color -->
+        <item name="colorControlActivated">@color/status_online</item>
+        <item name="colorSwitchThumbNormal">@color/status_offline</item>
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">#B2C60000</item>
+    </style>
+
+</resources>

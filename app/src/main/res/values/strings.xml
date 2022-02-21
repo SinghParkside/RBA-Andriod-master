@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Recovery Business Association</string>
+    <string name="navbar_title_talk">Talk</string>
+    <string name="navbar_title_home">Home</string>
+    <string name="navbar_title_map">Map</string>
+    <string name="signUp"><u>Sign up</u></string>
+    <string name="nouser">NO USER</string>
+    <string name="default_notification_channel_id">RBA General</string>
+    <string name="default_notification_channel_name">RBA General</string>
+    <string name="incoming_video_call_notification_channel_id">Video call</string>
+    <string name="incoming_video_call_notification_channel_name">Video call</string>
+    <string name="incoming_voice_call_notification_channel_id">Voice call</string>
+    <string name="incoming_voice_call_notification_channel_name">Voice call</string>
+    <string name="incoming_message_notification_channel_id">Message</string>
+    <string name="incoming_message_notification_channel_name">Message</string>
+</resources>

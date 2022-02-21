@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.map.MapFragment">
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.currentplacedetailsonmap.MapsActivityCurrentPlace" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageButton
+        android:id="@+id/filterButton"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#FFFFFF"
+        android:src="@drawable/ic_filters" />
+
+    <ImageButton
+        android:id="@+id/recoveryLocation"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#FFFFFF"
+        android:src="@drawable/ic_recenter" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/information_pop_up"
+        android:layout_width="match_parent"
+        android:layout_height="318dp"
+        android:layout_gravity="bottom"
+        android:background="#FFFFFF"
+        android:elevation="10dp"
+        android:paddingHorizontal="25dp"
+        android:paddingBottom="15dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/reportTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Something wrong? Click here to report."
+            android:textColor="#636363"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/websiteTextView" />
+
+        <ImageButton
+            android:id="@+id/information_sheet_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/transparent"
+            android:src="@drawable/ic_group_3369"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-black"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="2dp"
+            android:text="title"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/information_sheet_close" />
+
+        <ImageView
+            android:id="@+id/markerType"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_circle_full"
+            android:tint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/markerTypeTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/markerTypeTextView" />
+
+        <TextView
+            android:id="@+id/markerTypeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-black"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="2dp"
+            android:text="marker type"
+            android:textColor="@color/black"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintStart_toEndOf="@id/markerType"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+        <ImageView
+            android:id="@+id/locationIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_address"
+            app:layout_constraintBottom_toBottomOf="@id/addressTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/addressTextView" />
+
+        <TextView
+            android:id="@+id/addressTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:clickable="true"
+            android:fontFamily="sans-serif-black"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="2dp"
+            android:text="address"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/locationIcon"
+            app:layout_constraintTop_toBottomOf="@+id/markerTypeTextView" />
+
+        <ImageView
+            android:id="@+id/phoneIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_phone"
+            android:tint="#3f3f3f"
+            app:layout_constraintBottom_toBottomOf="@id/phoneTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/phoneTextView" />
+
+        <TextView
+            android:id="@+id/phoneTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="15dp"
+            android:clickable="true"
+            android:fontFamily="sans-serif-black"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="2dp"
+            android:text="phone"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/phoneIcon"
+            app:layout_constraintTop_toBottomOf="@+id/addressTextView" />
+
+        <ImageView
+            android:id="@+id/websiteIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_web_address"
+            app:layout_constraintBottom_toBottomOf="@id/websiteTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/websiteTextView" />
+
+        <TextView
+            android:id="@+id/websiteTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:clickable="true"
+            android:fontFamily="sans-serif-black"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="2dp"
+            android:text="website"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/websiteIcon"
+            app:layout_constraintTop_toBottomOf="@+id/phoneTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/filterLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="50dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/filterLayoutClose"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/transparent"
+                android:src="@drawable/ic_group_3369"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:text="Filters"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="10dp"
+                android:text="Choose the type of location centre you would like to see…"
+                android:textColor="#454545"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:weightSum="7">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_resource" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:fontFamily="sans-serif-medium"
+                    android:paddingStart="20dp"
+                    android:text="Resource/Comm Org"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <ToggleButton
+                    android:id="@+id/resourceToggle"
+                    style="@style/mapMarkerToggleButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center|right"
+                    android:background="@drawable/ic_toggle_bg"
+                    android:checked="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:weightSum="7">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_residential" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:fontFamily="sans-serif-medium"
+                    android:paddingStart="20dp"
+                    android:text="Residential"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <ToggleButton
+                    android:id="@+id/residentialToggle"
+                    style="@style/mapMarkerToggleButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center|right"
+                    android:background="@drawable/ic_toggle_bg"
+                    android:checked="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:weightSum="7">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_homeless" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:fontFamily="sans-serif-medium"
+                    android:paddingStart="20dp"
+                    android:text="Homeless Shelter"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <ToggleButton
+                    android:id="@+id/homelessToggle"
+                    style="@style/mapMarkerToggleButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center|right"
+                    android:background="@drawable/ic_toggle_bg"
+                    android:checked="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:weightSum="7">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_outpatient" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:fontFamily="sans-serif-medium"
+                    android:paddingStart="20dp"
+                    android:text="Outpaintent"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <ToggleButton
+                    android:id="@+id/outpatientToggle"
+                    style="@style/mapMarkerToggleButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center|right"
+                    android:background="@drawable/ic_toggle_bg"
+                    android:checked="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:weightSum="7">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_adolescents" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:fontFamily="sans-serif-medium"
+                    android:paddingStart="20dp"
+                    android:text="Adolescents"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <ToggleButton
+                    android:id="@+id/adolescentToggle"
+                    style="@style/mapMarkerToggleButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center|right"
+                    android:background="@drawable/ic_toggle_bg"
+                    android:checked="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:weightSum="7">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_soberliving" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:fontFamily="sans-serif-medium"
+                    android:paddingStart="20dp"
+                    android:text="Sober Living"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <ToggleButton
+                    android:id="@+id/soberToggle"
+                    style="@style/mapMarkerToggleButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center|right"
+                    android:background="@drawable/ic_toggle_bg"
+                    android:checked="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:weightSum="7">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_notypeen" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:fontFamily="sans-serif-medium"
+                    android:paddingStart="20dp"
+                    android:text="No Type"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <ToggleButton
+                    android:id="@+id/noTypeToggle"
+                    style="@style/mapMarkerToggleButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center|right"
+                    android:background="@drawable/ic_toggle_bg"
+                    android:checked="true" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/applyFilters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/oval_button"
+                android:text="Apply Filters"
+                android:textColor="@android:color/white" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
