@@ -1,0 +1,29 @@
+# https://github.com/firebase/firebase-tools
+name: Sonar Scan before build
+on: [pull_request, push]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Set up our JDK environment
+      - uses: actions/setup-java@v1.4.3
+        with:
+          java-version: 11
+      - name: Build the app
+        run: gradle build
+
+#      - uses: actions/checkout@v2
+#        with:
+#          fetch-depth: 0
+#      - uses: sonarsource/sonarqube-scan-action@master
+#        env:
+#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+#      # If you wish to fail your job when the Quality Gate is red, uncomment the
+#      # following lines. This would typically be used to fail a deployment.
+#      - uses: sonarsource/sonarqube-quality-gate-action@master
+#        timeout-minutes: 5
+#        env:
+#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
