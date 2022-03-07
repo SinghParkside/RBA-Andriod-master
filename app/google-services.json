@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "841184589941",
+    "firebase_url": "https://wishope-247fd.firebaseio.com",
+    "project_id": "wishope-247fd",
+    "storage_bucket": "wishope-247fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841184589941:android:c3705d3015ca18c3bfa03c",
+        "android_client_info": {
+          "package_name": "edu.uwp.appfactory.wishope"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841184589941-4ooc7d9hfspjpilf7gdo9cgmm6e2mb0h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.uwp.appfactory.wishope",
+            "certificate_hash": "1f74415f867d4c25de7fd9bc8e473168bbf95153"
+          }
+        },
+        {
+          "client_id": "841184589941-3emmdc8dp4mcgerjfjo6v42106962qqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5qEWhouHsbuGoH-RLo45kuWL2JjnSA_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841184589941-3emmdc8dp4mcgerjfjo6v42106962qqb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "841184589941-08bo1a6497d56c89pa6fbfo5m161tjej.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "SE2.WisHope"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
