@@ -4,7 +4,11 @@ description: 'mobsfscan is a SAST that can find insecure code patterns in your A
 branding:
   icon: 'code'
   color: 'blue'
-
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
 inputs:
   args:
     description: |
