@@ -10,8 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name : install pip
-          - run: pip install
       - uses: actions/checkout@v2
       - name: mobsfscan
         uses: MobSF/mobsfscan@main
