@@ -1,9 +1,4 @@
-name: 'mobsfscan'
-author: 'Ishmeet_Singh_&_AD'
-description: 'mobsfscan is a SAST that can find insecure code patterns in your Android and iOS source code.'
-branding:
-  icon: 'code'
-  color: 'blue'
+
 on:
   push:
     branches: [ master, main ]
@@ -18,6 +13,7 @@ jobs:
         uses: MobSF/mobsfscan@main
         with:
           args: '. --json'
+
 inputs:
   args:
     description: |
