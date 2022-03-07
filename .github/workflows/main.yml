@@ -9,7 +9,15 @@ on:
     branches: [ master, main ]
   pull_request:
     branches: [ master, main ]
-
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: mobsfscan
+        uses: MobSF/mobsfscan@main
+        with:
+          args: '. --json'
 inputs:
   args:
     description: |
