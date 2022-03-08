@@ -15,3 +15,5 @@ jobs:
         uses: MobSF/mobsfscan@main
         with:
           args: '. --json'
+          name: mobsfscan
+            uses: MobSF/mobsfscan@0.1.0
